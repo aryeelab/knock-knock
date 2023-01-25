@@ -5,6 +5,27 @@
 
 ## Installation ![](https://img.shields.io/pypi/pyversions/knock-knock.svg) [![](https://badge.fury.io/py/knock-knock.svg)](https://badge.fury.io/py/knock-knock) [![install with bioconda](https://img.shields.io/conda/vn/bioconda/knock-knock)](http://bioconda.github.io/recipes/knock-knock/README.html)
 
+### Docker
+
+Note: This Docker image has only been tested on an M1 Mac so far, but I expect it will work on other systems too.
+
+Build the docker image:
+```
+docker build -t knock-knock .
+```
+
+Switch to your data directory and start a docker container with the current directory (or another directory) mounted:
+```
+docker run --rm -it -v ${PWD}:/data knock-knock
+```
+
+Now, inside the container:
+```
+cd /data
+# You should see the contents of the directory you mounted
+```
+
+
 ### conda
 ```
 conda config --add channels bioconda
